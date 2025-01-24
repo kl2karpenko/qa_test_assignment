@@ -1,11 +1,12 @@
+import React from 'react';
+
 import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
 
-test('uses jest-dom', () => {
-	document.body.innerHTML = `
-    <span data-testid="not-empty"><span data-testid="empty"></span></span>
-    <div data-testid="visible">Visible Example</div>
-  `
+import ItemForm from './ItemForm.jsx';
 
-	expect(screen.queryByTestId('not-empty')).not.toBeEmptyDOMElement()
-	expect(screen.getByText('Visible Example')).toBeVisible()
-})
+test('ItemForm tests', () => {
+
+	render(<ItemForm />);
+	expect(screen.getByTestId('someel')).toBeInTheDocument()
+});

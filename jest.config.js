@@ -1,7 +1,11 @@
 export default {
 	testEnvironment: 'jsdom',
-	setupFilesAfterEnv: ['@testing-library/jest-dom'],
 	transform: {
-		'^.+\\.jsx?$': 'babel-jest',
+		'^.+\\.jsx?$': 'babel-jest', // Use babel-jest to handle ES Modules
 	},
+	moduleFileExtensions: ['js', 'jsx'],
+	setupFilesAfterEnv: ['@testing-library/jest-dom'],
+	"transformIgnorePatterns": [
+		"node_modules/(?!variables/.*)"
+	]
 };

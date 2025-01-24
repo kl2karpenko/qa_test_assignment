@@ -27,7 +27,7 @@ const ItemForm = ({ addItem }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form data-testid={'someel'} onSubmit={handleSubmit}>
 			<h2>Create New Product</h2>
 			{error && <p style={{ color: 'red' }}>{error}</p>}
 			<div>
